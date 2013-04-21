@@ -1,0 +1,10 @@
+<form class="login-form" name="loginForm">
+    <label>Membership #</label>
+    <input type="text" ng-model="$parent.user" name="uNumber" ng-change="login.invalid = false" required> <!-- note that ng-switch creates new scope, so we need to refer to $parent -->
+    <label>Password</label>
+    <input type="password" ng-model="$parent.password" name="uPassword" ng-change="login.invalid = false" required>
+    <button type="submit" class="btn btn-mini" ng-click="$parent.doLogin()" ng-disabled="loginForm.$invalid">Submit</button>
+    <div ng-show="login.invalid" class="alert alert-error">
+        Invalid login
+    </div>
+</form>
